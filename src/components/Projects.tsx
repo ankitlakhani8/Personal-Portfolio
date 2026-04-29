@@ -3,7 +3,7 @@ import { reveal, revealTransition, EASE } from '../variants'
 
 function PreviewCamera() {
   return (
-    <div className="pv-camera" style={{ position: 'absolute', inset: 0, borderRadius: 10, overflow: 'hidden', border: '1px solid var(--line-strong)' }}>
+    <div className="pv-camera" style={{ position: 'absolute', inset: 0, borderRadius: 12, overflow: 'hidden', border: '1px solid var(--line-strong)' }}>
       <span style={{ position: 'absolute', left: 10, bottom: 8, zIndex: 2, fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--ink)', mixBlendMode: 'difference' }}>01 — Hardware × RAG</span>
     </div>
   )
@@ -40,10 +40,17 @@ function PreviewTrader() {
   )
 }
 
-function PreviewInvestHR() {
+function PreviewCanSpirit() {
   return (
-    <div className="pv-investhr" style={{ position: 'absolute', inset: 0, borderRadius: 10, overflow: 'hidden', border: '1px solid var(--line-strong)' }}>
-      <span style={{ position: 'absolute', left: 10, bottom: 8, zIndex: 2, fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--ink)', mixBlendMode: 'difference' }}>04 — Freelance · Live</span>
+    <div style={{ position: 'absolute', inset: 0, borderRadius: 12, overflow: 'hidden', background: 'linear-gradient(135deg, #0a0a0c 0%, #0a0f0a 100%)', border: '1px solid var(--line-strong)', display: 'flex', flexDirection: 'column', gap: 5, padding: 10 }}>
+      {[0.9, 0.6, 0.75].map((w, i) => (
+        <div key={i} style={{ flex: 1, borderRadius: 5, background: 'rgba(243,239,231,0.04)', border: '1px solid var(--line)', display: 'flex', alignItems: 'center', gap: 7, padding: '0 9px' }}>
+          <div style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--accent)', opacity: 0.75 }} />
+          <div style={{ flex: 1, height: 2, background: 'var(--line)', borderRadius: 1 }} />
+          <div style={{ width: `${w * 32}%`, height: 2, background: 'rgba(255,149,89,0.35)', borderRadius: 1 }} />
+        </div>
+      ))}
+      <span style={{ position: 'absolute', left: 10, bottom: 8, fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--ink)', mixBlendMode: 'difference' }}>04 — Frontend · WordPress</span>
     </div>
   )
 }
@@ -52,7 +59,7 @@ const projects = [
   { num: '/01', title: ['Poetic ', 'Camera'], stack: ['Raspberry Pi', 'Python', 'RAG', 'Optics'], desc: 'A hardware–software hybrid: Raspberry Pi, custom lenses, and a bespoke RAG system that turns moments into language.', Preview: PreviewCamera },
   { num: '/02', title: ['Virtual Voice ', 'Assistant'], stack: ['Python', 'Claude API', 'STT/TTS', 'FastAPI'], desc: 'An intelligent assistant powered by Python and the Claude API — voice in, action out, with grounded reasoning.', Preview: PreviewVoice },
   { num: '/03', title: ['Auto Pilot ', 'Trader'], stack: ['Python', 'FastAPI', 'WebSockets', 'Automation'], desc: 'An algorithmic trading platform with strategy hooks, broker integration, and end-to-end automation pipelines.', Preview: PreviewTrader },
-  { num: '/04', title: ['InvestHR ', 'Web Platform'], stack: ['React', 'Next.js', 'CMS', 'Freelance'], desc: 'A professional, freelance build for a specialized executive search firm — branded, accessible, and fast.', Preview: PreviewInvestHR },
+  { num: '/04', title: ['CanSpiritAI ', 'Client Builds'], stack: ['React', 'WordPress', 'HTML/CSS', 'Internship'], desc: 'Built and deployed production websites for multiple clients at CanSpiritAI — custom frontend and WordPress implementations, branded and live.', Preview: PreviewCanSpirit },
 ]
 
 function ProjectRow({ proj, delay }: { proj: typeof projects[0]; delay: number }) {
@@ -65,13 +72,13 @@ function ProjectRow({ proj, delay }: { proj: typeof projects[0]; delay: number }
       transition={revealTransition(delay)}
       whileHover="rowHover"
       className="proj-row"
-      style={{ display: 'grid', gridTemplateColumns: '56px 1.1fr 1.4fr 220px 220px 60px', alignItems: 'center', gap: 24, padding: '28px 0', borderBottom: '1px solid var(--line)', color: 'var(--ink)', textDecoration: 'none', cursor: 'none' }}
+      style={{ display: 'grid', gridTemplateColumns: '56px 1.1fr 1.4fr 220px 220px 60px', alignItems: 'center', gap: 24, padding: '28px 0', borderBottom: '1px solid var(--line)', color: 'var(--ink)', textDecoration: 'none', cursor: 'none', transition: 'transform 0.4s var(--ease)', willChange: 'transform' }}
     >
       <div className="proj-num" style={{ fontFamily: 'var(--mono)', fontSize: 12, color: 'var(--ink-faint)', letterSpacing: '.04em', position: 'relative', zIndex: 1 }}>{num}</div>
 
       <motion.div
         className="proj-title"
-        style={{ fontFamily: 'var(--sans)', fontWeight: 400, fontSize: 'clamp(22px, 2.6vw, 36px)', letterSpacing: '-0.02em', lineHeight: 1.05, position: 'relative', zIndex: 1 }}
+        style={{ fontFamily: 'var(--sans)', fontWeight: 600, fontSize: 'clamp(22px, 2.6vw, 36px)', letterSpacing: '-0.03em', lineHeight: 1.05, position: 'relative', zIndex: 1 }}
         variants={{ rowHover: { x: 8, color: '#ff9559', transition: { duration: 0.5, ease: EASE } } }}
       >
         {title[0]}<em style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', color: 'inherit' }}>{title[1]}</em>
@@ -117,7 +124,7 @@ export default function Projects() {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40, marginBottom: 40 }}>
           <motion.h2 variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.12 }} transition={revealTransition()}
-            style={{ fontFamily: 'var(--sans)', fontWeight: 400, fontSize: 'clamp(36px, 4.4vw, 64px)', lineHeight: 1, letterSpacing: '-0.03em', margin: 0 }}>
+            style={{ fontFamily: 'var(--sans)', fontWeight: 600, fontSize: 'clamp(36px, 4.4vw, 64px)', lineHeight: 1, letterSpacing: '-0.04em', margin: 0 }}>
             Projects, in <em style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', color: 'var(--accent)' }}>practice</em>.
           </motion.h2>
           <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.12 }} transition={revealTransition(0.08)}

@@ -4,7 +4,6 @@ import Loader from './components/Loader'
 import CustomCursor from './components/CustomCursor'
 import TopNav from './components/TopNav'
 import Hero from './components/Hero'
-import Marquee from './components/Marquee'
 import About from './components/About'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
@@ -28,8 +27,7 @@ export default function App() {
       <CustomCursor />
       <TopNav loaded={loaded} />
       <Hero loaded={loaded} />
-      <Marquee />
-      <About />
+<About />
       <Projects />
       <Contact />
     </>

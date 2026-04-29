@@ -11,16 +11,16 @@ export default function KineticName({ loaded }: { loaded: boolean }) {
   return (
     <h1
       aria-label="Ankit Lakhani"
-      style={{ fontFamily: 'var(--sans)', fontWeight: 500, fontSize: 'clamp(64px, 14vw, 220px)', lineHeight: 0.88, letterSpacing: '-0.045em', margin: 0 }}
+      style={{ fontFamily: 'var(--sans)', fontWeight: 700, fontSize: 'clamp(64px, 14vw, 220px)', lineHeight: 0.88, letterSpacing: '-0.04em', margin: 0 }}
     >
       <span style={{ display: 'block' }}>
         {segments.map((seg, i) => (
           <span key={i} style={{ display: 'inline-block', overflow: 'hidden', verticalAlign: 'top' }}>
             <motion.span
-              style={{ display: 'inline-block', fontFamily: seg.serif ? 'var(--serif)' : 'var(--sans)', fontStyle: seg.serif ? 'italic' : 'normal', fontWeight: seg.serif ? 400 : 500, letterSpacing: seg.serif ? '-0.02em' : undefined, color: seg.serif ? 'var(--accent)' : 'var(--ink)' }}
+              style={{ display: 'inline-block', fontFamily: seg.serif ? 'var(--serif)' : 'var(--sans)', fontStyle: seg.serif ? 'italic' : 'normal', fontWeight: seg.serif ? 400 : 700, letterSpacing: seg.serif ? '-0.02em' : undefined, color: seg.serif ? 'var(--accent)' : 'var(--ink)' }}
               initial={{ y: '102%' }}
               animate={loaded ? { y: '0%' } : { y: '102%' }}
-              transition={{ duration: 1.1, ease: EASE, delay: i * 0.1 }}
+              transition={{ duration: 0.85, ease: EASE, delay: i * 0.1 }}
             >
               {seg.text}
             </motion.span>
@@ -32,7 +32,7 @@ export default function KineticName({ loaded }: { loaded: boolean }) {
           style={{ display: 'inline-block' }}
           initial={{ y: '102%' }}
           animate={loaded ? { y: '0%' } : { y: '102%' }}
-          transition={{ duration: 1.1, ease: EASE, delay: 0.32 }}
+          transition={{ duration: 0.85, ease: EASE, delay: 0.32 }}
         >
           Lakhani
         </motion.span>

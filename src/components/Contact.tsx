@@ -17,7 +17,7 @@ const MailIcon = () => (
   </svg>
 )
 
-const btnBase: React.CSSProperties = { display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 22px', borderRadius: 999, fontFamily: 'var(--sans)', fontSize: 13, letterSpacing: '.02em', textDecoration: 'none', cursor: 'none', transition: 'background .25s, color .25s, border-color .25s' }
+const btnBase: React.CSSProperties = { display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 22px', borderRadius: 980, fontFamily: 'var(--sans)', fontSize: 13, letterSpacing: '.02em', textDecoration: 'none', cursor: 'none', transition: 'background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease), filter 0.3s var(--ease), transform 0.3s var(--ease)', willChange: 'transform' }
 
 export default function Contact() {
   return (
@@ -31,7 +31,7 @@ export default function Contact() {
         </motion.div>
 
         <motion.h2 variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.12 }} transition={revealTransition(0.08)}
-          style={{ fontFamily: 'var(--sans)', fontWeight: 300, fontSize: 'clamp(42px, 7vw, 120px)', lineHeight: 0.96, letterSpacing: '-0.04em', margin: 0, maxWidth: '18ch' }}>
+          style={{ fontFamily: 'var(--sans)', fontWeight: 600, fontSize: 'clamp(42px, 7vw, 120px)', lineHeight: 1.0, letterSpacing: '-0.04em', margin: 0, maxWidth: '18ch' }}>
           Let&apos;s build{' '}
           <em style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>something</em>
           <br />
@@ -42,14 +42,14 @@ export default function Contact() {
           style={{ marginTop: 56, display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
           <a href="https://www.linkedin.com/in/ankit50/" target="_blank" rel="noopener" data-h=""
             style={{ ...btnBase, background: 'var(--accent)', color: '#1a0d04', border: '1px solid var(--accent)' }}
-            onMouseEnter={e => { (e.currentTarget.style.background = '#ffb083'); (e.currentTarget.style.borderColor = '#ffb083') }}
-            onMouseLeave={e => { (e.currentTarget.style.background = 'var(--accent)'); (e.currentTarget.style.borderColor = 'var(--accent)') }}>
+            onMouseEnter={e => { (e.currentTarget.style.filter = 'brightness(1.08)'); (e.currentTarget.style.transform = 'scale(1.02)') }}
+            onMouseLeave={e => { (e.currentTarget.style.filter = 'none'); (e.currentTarget.style.transform = 'scale(1)') }}>
             <span>Say Hello</span><span>→</span>
           </a>
           <a href="https://github.com/ankitlakhani8" target="_blank" rel="noopener" data-h=""
             style={{ ...btnBase, background: 'transparent', color: 'var(--ink)', border: '1px solid var(--line-strong)' }}
-            onMouseEnter={e => { (e.currentTarget.style.background = 'var(--ink)'); (e.currentTarget.style.color = '#0b0b0c'); (e.currentTarget.style.borderColor = 'var(--ink)') }}
-            onMouseLeave={e => { (e.currentTarget.style.background = 'transparent'); (e.currentTarget.style.color = 'var(--ink)'); (e.currentTarget.style.borderColor = 'var(--line-strong)') }}>
+            onMouseEnter={e => { (e.currentTarget.style.background = 'var(--ink)'); (e.currentTarget.style.color = '#0b0b0c'); (e.currentTarget.style.borderColor = 'var(--ink)'); (e.currentTarget.style.transform = 'scale(1.02)') }}
+            onMouseLeave={e => { (e.currentTarget.style.background = 'transparent'); (e.currentTarget.style.color = 'var(--ink)'); (e.currentTarget.style.borderColor = 'var(--line-strong)'); (e.currentTarget.style.transform = 'scale(1)') }}>
             <span>GitHub</span><span>↗</span>
           </a>
         </motion.div>

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { EASE } from '../variants'
 
 const navStyle: React.CSSProperties = {
   position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
@@ -14,7 +15,7 @@ export default function TopNav({ loaded }: { loaded: boolean }) {
       style={navStyle}
       initial={{ opacity: 0, y: 8 }}
       animate={loaded ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.9, ease: 'easeOut', delay: 0.6 }}
+      transition={{ duration: 0.7, ease: EASE, delay: 0.6 }}
     >
       <div style={{ fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '.08em', textTransform: 'uppercase' }}>
         <span

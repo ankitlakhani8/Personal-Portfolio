@@ -7,7 +7,7 @@ export default function Loader({ visible }: { visible: boolean }) {
         <motion.div
           key="loader"
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: 'easeInOut' }}
+          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
           style={{
             position: 'fixed', inset: 0, zIndex: 1000,
             background: 'var(--bg)',

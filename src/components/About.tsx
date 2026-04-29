@@ -20,7 +20,7 @@ export default function About() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 80, alignItems: 'start' }} className="about-grid">
           <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.12 }} transition={revealTransition(0.08)}>
-            <h2 style={{ fontFamily: 'var(--sans)', fontWeight: 400, fontSize: 'clamp(36px, 4.4vw, 64px)', lineHeight: 1.02, letterSpacing: '-0.03em', margin: '0 0 24px', maxWidth: '18ch' }}>
+            <h2 style={{ fontFamily: 'var(--sans)', fontWeight: 600, fontSize: 'clamp(36px, 4.4vw, 64px)', lineHeight: 1.1, letterSpacing: '-0.04em', margin: '0 0 24px', maxWidth: '18ch' }}>
               Engineer with an{' '}
               <em style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>obsession</em>
               {' '}for products that quietly do a lot.
@@ -29,29 +29,32 @@ export default function About() {
 
           <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.12 }} transition={revealTransition(0.16)}>
             <p style={{ fontSize: 18, lineHeight: 1.65, color: 'var(--ink-dim)', maxWidth: '58ch', margin: '0 0 22px' }}>
-              I'm a final-year <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>B.Tech CSE</strong> student at{' '}
-              <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>MIT-WPU</strong>, focused on building products with
-              HTML, CSS, JavaScript, React, Python and FastAPI. My specialty is{' '}
-              <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>AI integration</strong> — RAG systems, semantic search,
-              and vector databases like Pinecone.
+              Hi, I'm Ankit — currently in the final year of{' '}
+              <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>B.Tech CSE at MIT-WPU</strong> and working as a{' '}
+              <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>Software Engineering Intern</strong>. I'm most
+              comfortable in <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>Python</strong> and front-end
+              frameworks like <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>React</strong> and{' '}
+              <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>Astro</strong>.
             </p>
             <p style={{ fontSize: 18, lineHeight: 1.65, color: 'var(--ink-dim)', maxWidth: '58ch', margin: 0 }}>
-              I'm targeting <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>global, remote software roles at product-focused companies</strong>{' '}
-              where engineering and design share a workbench.
+              I've also built and deployed websites for clients using{' '}
+              <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>WordPress</strong> and{' '}
+              <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>Shopify</strong> — so I'm equally at home
+              writing code from scratch or getting things live fast with the right tool for the job.
             </p>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 28 }}>
               {pills.map(p => (
-                <span key={p} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 14px', borderRadius: 999, border: '1px solid var(--line-strong)', fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '.04em', color: 'var(--ink-dim)', transition: 'color .2s, border-color .2s, background .2s', cursor: 'default' }}
-                  onMouseEnter={e => { (e.currentTarget.style.color = 'var(--ink)'); (e.currentTarget.style.borderColor = 'var(--accent)'); (e.currentTarget.style.background = 'rgba(255,149,89,.06)') }}
-                  onMouseLeave={e => { (e.currentTarget.style.color = 'var(--ink-dim)'); (e.currentTarget.style.borderColor = 'var(--line-strong)'); (e.currentTarget.style.background = 'transparent') }}>
+                <span key={p} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 14px', borderRadius: 980, border: '1px solid var(--line-strong)', fontFamily: 'var(--mono)', fontSize: 11, letterSpacing: '.04em', color: 'var(--ink-dim)', transition: 'color 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.3s var(--ease)', cursor: 'default', willChange: 'transform' }}
+                  onMouseEnter={e => { (e.currentTarget.style.color = 'var(--ink)'); (e.currentTarget.style.borderColor = 'var(--accent)'); (e.currentTarget.style.background = 'rgba(255,149,89,.06)'); (e.currentTarget.style.transform = 'scale(1.04)') }}
+                  onMouseLeave={e => { (e.currentTarget.style.color = 'var(--ink-dim)'); (e.currentTarget.style.borderColor = 'var(--line-strong)'); (e.currentTarget.style.background = 'transparent'); (e.currentTarget.style.transform = 'scale(1)') }}>
                   <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--accent)', opacity: 0.7 }} />{p}
                 </span>
               ))}
             </div>
 
             <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.12 }} transition={revealTransition(0.24)}
-              style={{ marginTop: 36, border: '1px solid var(--line)', borderRadius: 14, padding: 28, background: 'linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,0))' }}>
+              style={{ marginTop: 36, border: '1px solid rgba(243,239,231,0.08)', borderRadius: 18, padding: 28, background: 'rgba(30,30,30,0.72)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', boxShadow: '0 2px 6px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08), 0 24px 48px rgba(0,0,0,0.06)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 22, fontSize: 13 }}>
                 <span className="live-dot" style={{ width: 8, height: 8, borderRadius: '50%', background: '#6ee787', display: 'inline-block' }} />
                 <span style={{ color: 'var(--ink)' }}>Open for offers — </span>
@@ -61,9 +64,9 @@ export default function About() {
               {[
                 { k: 'Studying', v: 'B.Tech CSE · MIT-WPU', amber: false },
                 { k: 'Based', v: 'Pune, India', amber: false },
-                { k: 'Looking for', v: 'Remote, product roles', amber: true },
+                { k: 'Looking for', v: 'Product-focused roles', amber: true },
                 { k: 'Stack', v: 'Python · React · FastAPI', amber: false },
-                { k: 'Working on', v: 'Poetic Camera v2', amber: false },
+                { k: 'Learning', v: 'Astro framework', amber: false },
               ].map(({ k, v, amber }, i, arr) => (
                 <div key={k} style={{ display: 'flex', justifyContent: 'space-between', padding: '14px 0', borderBottom: i < arr.length - 1 ? '1px dashed var(--line)' : 'none', fontFamily: 'var(--mono)', fontSize: 12 }}>
                   <span style={{ color: 'var(--ink-faint)', letterSpacing: '.04em', textTransform: 'uppercase', fontSize: 10 }}>{k}</span>

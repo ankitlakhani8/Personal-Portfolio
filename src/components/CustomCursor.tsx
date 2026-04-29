@@ -4,8 +4,8 @@ import { useMotionValue, useSpring, motion } from 'framer-motion'
 export default function CustomCursor() {
   const mx = useMotionValue(-100)
   const my = useMotionValue(-100)
-  const rx = useSpring(mx, { damping: 30, stiffness: 250, mass: 0.5 })
-  const ry = useSpring(my, { damping: 30, stiffness: 250, mass: 0.5 })
+  const rx = useSpring(mx, { damping: 26, stiffness: 300, mass: 0.5 })
+  const ry = useSpring(my, { damping: 26, stiffness: 300, mass: 0.5 })
   const hovering = useRef(false)
   const dotRef = useRef<HTMLDivElement>(null)
   const ringRef = useRef<HTMLDivElement>(null)
@@ -57,7 +57,7 @@ export default function CustomCursor() {
           pointerEvents: 'none',
           transform: 'translate(-100px,-100px) translate(-50%,-50%)',
           mixBlendMode: 'difference',
-          transition: 'width .25s cubic-bezier(.2,.8,.2,1), height .25s cubic-bezier(.2,.8,.2,1)',
+          transition: 'width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), height 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)',
         }}
       />
       {/* ring — spring follow */}
