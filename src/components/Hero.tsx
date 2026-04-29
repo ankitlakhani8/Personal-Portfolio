@@ -24,7 +24,7 @@ export default function Hero({ loaded }: { loaded: boolean }) {
   const vis = loaded ? { opacity: 1, y: 0 } : {}
   const init = { opacity: 0, y: 8 }
   const heroRef = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'], layoutEffect: false })
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
   const bgParallax = useTransform(scrollYProgress, [0, 1], [0, -40])
   const contentParallax = useTransform(scrollYProgress, [0, 1], [0, -60])
   const contentOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0.5])
